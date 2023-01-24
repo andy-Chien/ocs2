@@ -13,14 +13,14 @@
     </group>
 
     <node if="$(arg debug)" pkg="ocs2_double_integrator_ros" type="double_integrator_mpc" name="double_integrator_mpc"
-          output="screen" args="$(arg task_name)" launch-prefix="gnome-terminal -- gdb --args"/>
+          output="screen" args="$(arg task_name)" launch-prefix="xterm -e gdb --args"/>
 
     <node unless="$(arg debug)" pkg="ocs2_double_integrator_ros" type="double_integrator_mpc" name="double_integrator_mpc"
           output="screen" args="$(arg task_name)" launch-prefix=""/>
 
     <node pkg="ocs2_double_integrator_ros" type="double_integrator_dummy_test" name="double_integrator_dummy_test"
-          output="screen" args="$(arg task_name)" launch-prefix="gnome-terminal --"/>
+          output="screen" args="$(arg task_name)" launch-prefix="xterm -e"/>
 
     <node pkg="ocs2_double_integrator_ros" type="double_integrator_target" name="double_integrator_target"
-          output="screen" args="$(arg task_name)" launch-prefix="gnome-terminal --"/>
+          output="screen" args="$(arg task_name)" launch-prefix="xterm -e"/>
 </launch>
